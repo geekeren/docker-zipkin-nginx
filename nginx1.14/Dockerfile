@@ -1,6 +1,6 @@
-FROM nginx:1.15
+FROM nginx:1.14
 RUN apt-get update && apt install wget -y
-ENV NGINX_VERSION 1.15.0
+ENV NGINX_VERSION 1.14.0
 #Install nginx-opentracing module
 RUN wget -O - \
   https://github.com/opentracing-contrib/nginx-opentracing/releases/download/v0.8.0/linux-amd64-nginx-$NGINX_VERSION-ngx_http_module.so.tgz | \
