@@ -1,5 +1,9 @@
 # docker-zipkin-nginx
 
+[![Dockerhub](https://img.shields.io/docker/pulls/distracing/zipkin-nginx.svg)](https://hub.docker.com/r/distracing/zipkin-nginx/)
+[![Dockerhub](https://img.shields.io/docker/automated/distracing/zipkin-nginx.svg)](https://hub.docker.com/r/distracing/zipkin-nginx/)
+[![License](https://img.shields.io/github/license/geekeren/docker-zipkin-nginx.svg)](https://github.com/geekeren/docker-zipkin-nginx/blob/master/LICENSE)
+
 Dockerfile project for nginx supporting zipkin tracer
 
 ## Usage
