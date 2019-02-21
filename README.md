@@ -22,7 +22,7 @@ docker pull distracing/zipkin-nginx
 
 ### Run Docker with config files mounted
 ```
-docker run -p 80:80 -v ./nginx.conf:/etc/nginx/nginx.conf:ro - ./zipkin-nginx-config.json:/etc/zipkin-nginx/zipkin-nginx-config.json:ro distracing/zipkin-nginx:1.12 
+docker run -p 80:80 -v ./nginx.conf:/etc/nginx/nginx.conf:ro -v ./zipkin-nginx-config.json:/etc/zipkin-nginx/zipkin-nginx-config.json:ro distracing/zipkin-nginx:1.12 
 ```
 
 ### Configuration
