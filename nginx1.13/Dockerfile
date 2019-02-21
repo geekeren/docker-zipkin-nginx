@@ -1,4 +1,4 @@
-FROM nginx:1.13
+FROM nginx:1.13.12
 RUN apt-get update && apt install wget -y
 ENV NGINX_VERSION 1.13.12
 #Install nginx-opentracing module
