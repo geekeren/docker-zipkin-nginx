@@ -22,7 +22,7 @@ docker pull distracing/zipkin-nginx
 
 ### Run Docker with config files mounted
 ```
-docker run -p 80:80 -v ./nginx.conf:/etc/nginx/nginx.conf:ro -v ./zipkin-nginx-config.json:/etc/zipkin-nginx/zipkin-nginx-config.json:ro distracing/zipkin-nginx:1.12 
+docker run -p 80:80 -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf:ro -v $(pwd)/zipkin-nginx-config.json:/etc/zipkin-nginx/zipkin-nginx-config.json:ro distracing/zipkin-nginx:1.12
 ```
 
 ### Configuration
@@ -32,6 +32,9 @@ The following is example code of nginx.conf and zipkin configuration. A example 
 #### Nginx.conf
 ```
 load_module modules/ngx_http_opentracing_module.so;
+events {
+    worker_connections  1024;
+}
 
 http {
     opentracing_load_tracer /usr/local/lib/libzipkin_opentracing_plugin.so /etc/zipkin-nginx/zipkin-nginx-config.json;
@@ -53,7 +56,13 @@ http {
         }
     }
 }
+
 ```
+Getting More information at：
+
+- https://github.com/opentracing-contrib/nginx-opentracing
+- https://github.com/opentracing-contrib/nginx-opentracing/blob/ea9994d7135be5ad2e3009d0f270e063b1fb3b21/doc/Reference.md
+
 #### zipkin-nginx-config.json
 
 ```
