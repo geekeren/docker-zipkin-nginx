@@ -46,7 +46,6 @@ http {
     'traceId=$opentracing_context_x_b3_traceid '
     'spanId=$opentracing_context_x_b3_spanid ';
 
-    # DEFAULT == planetfitness.com
     server {
         listen 80;
         opentracing_propagate_context;
